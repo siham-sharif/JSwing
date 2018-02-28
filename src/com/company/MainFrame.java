@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class MainFrame extends JFrame {
 
-    private JTextArea textArea;
+    private TextPanel textPanel;
     private JButton btn;
 
     public MainFrame(){
@@ -16,16 +16,16 @@ public class MainFrame extends JFrame {
 
         setLayout(new BorderLayout());
 
-        textArea = new JTextArea();
+        textPanel = new TextPanel();
         btn = new JButton("Click me!");
 
-        add(textArea, BorderLayout.CENTER);
+        add(textPanel, BorderLayout.CENTER);
         add(btn, BorderLayout.SOUTH);
 
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textArea.append("Hello!\n");
+                textPanel.appendText("Hello!\n");
             }
         });
 
