@@ -2,6 +2,8 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainFrame extends JFrame {
 
@@ -19,6 +21,13 @@ public class MainFrame extends JFrame {
 
         add(textArea, BorderLayout.CENTER);
         add(btn, BorderLayout.SOUTH);
+
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textArea.append("Hello!\n");
+            }
+        });
 
         setSize(600, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
