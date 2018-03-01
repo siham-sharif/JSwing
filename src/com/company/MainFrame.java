@@ -17,20 +17,17 @@ public class MainFrame extends JFrame {
 
         setLayout(new BorderLayout());
 
+        // componentns
         toolbar = new Toolbar();
         textPanel = new TextPanel();
         btn = new JButton("Click me!");
 
+        toolbar.setTextPanel(textPanel);
+
+        // adding components to Toolbar
         add(toolbar,BorderLayout.NORTH);
         add(textPanel, BorderLayout.CENTER);
-        add(btn, BorderLayout.SOUTH);
 
-        btn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                textPanel.appendText("Hello!\n");
-            }
-        });
 
         setSize(600, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
