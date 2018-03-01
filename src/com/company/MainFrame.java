@@ -20,9 +20,13 @@ public class MainFrame extends JFrame {
         // componentns
         toolbar = new Toolbar();
         textPanel = new TextPanel();
-        btn = new JButton("Click me!");
 
-        toolbar.setTextPanel(textPanel);
+        toolbar.setStringListener(new StringListener(){
+            @Override
+            public void textEmitted(String text) {
+                textPanel.appendText(text);
+            }
+        });
 
         // adding components to Toolbar
         add(toolbar,BorderLayout.NORTH);
@@ -33,6 +37,4 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
-
-
 }
