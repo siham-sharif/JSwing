@@ -32,7 +32,7 @@ public class MainFrame extends JFrame {
         add(toolbar,BorderLayout.NORTH);
         add(textPanel, BorderLayout.CENTER);
 
-
+        //default constructor value
         setSize(600, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
